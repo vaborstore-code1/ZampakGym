@@ -67,8 +67,15 @@ if (leadForm) {
     leadForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const nome = document.getElementById('name').value;
-        const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
-        window.open(link, '_blank');
+        
+        if (nome.trim()) {
+            const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
+            const link = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
+            window.open(link, '_blank');
+            leadForm.reset();
+        } else {
+            alert('Por favor, preencha seu nome!');
+        }
     });
 }
 
@@ -129,8 +136,9 @@ if (formMatricula) {
         const plano = document.getElementById('mat-plano').value;
         const objetivo = document.getElementById('mat-objetivo').value;
         
-        if (nome && plano && objetivo) {
-            const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de contratar o plano ${plano}. Meu objetivo é ${objetivo}.`;
+        if (nome.trim() && plano && objetivo) {
+            const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de contratar o plano ${plano}. Meu objetivo é ${objetivo}.`;
+            const link = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
             window.open(link, '_blank');
             
             // Fecha o modal após enviar
