@@ -84,10 +84,8 @@ h2 { text-align: center; margin-bottom: 50px; font-size: 2.5rem; font-weight: 90
 .shadow-gold { box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3); }
 
 /* LOCALIZAÇÃO */
-.location-section { }
 .location-container { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: center; }
 .map-wrapper { border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); }
-.address-info { }
 .address-info h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
 .address-info p { color: var(--grey); margin-bottom: 25px; line-height: 1.6; font-size: 1rem; }
 
