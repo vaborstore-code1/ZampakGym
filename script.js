@@ -66,6 +66,24 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
     window.open(link, '_blank');
 });
 
+// FORM MATRÍCULA - ENVIO AO WHATSAPP
+document.getElementById('formMatricula').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nome = document.getElementById('mat-nome').value;
+    const objetivo = document.getElementById('mat-objetivo').value;
+    
+    if (nome && objetivo) {
+        const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de iniciar meus treinos. Meu objetivo é ${objetivo}.`;
+        window.open(link, '_blank');
+        
+        // Fecha o modal após enviar
+        modal.classList.remove("active");
+        
+        // Limpa o formulário
+        document.getElementById('formMatricula').reset();
+    }
+});
+
 // ===== MODAL MATRÍCULA =====
 const modal = document.getElementById("modalMatricula");
 const openModalBtns = document.querySelectorAll(".open-modal");
