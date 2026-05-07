@@ -27,9 +27,12 @@ particlesJS('particles-js', {
 // MENU MOBILE
 const menuToggle = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
 
 // ANIMAÇÃO DE REVELAÇÃO
 const reveals = document.querySelectorAll(".reveal");
@@ -59,48 +62,86 @@ document.querySelectorAll('.accordion-header').forEach(btn => {
 });
 
 // FORM AGENDAR AULA EXPERIMENTAL
-document.getElementById('leadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('name').value;
-    const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
-    window.open(link, '_blank');
-});
-
-// FORM MATRÍCULA - ENVIO AO WHATSAPP
-document.getElementById('formMatricula').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const nome = document.getElementById('mat-nome').value;
-    const objetivo = document.getElementById('mat-objetivo').value;
-    
-    if (nome && objetivo) {
-        const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de iniciar meus treinos. Meu objetivo é ${objetivo}.`;
+const leadForm = document.getElementById('leadForm');
+if (leadForm) {
+    leadForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nome = document.getElementById('name').value;
+        const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
         window.open(link, '_blank');
-        
-        // Fecha o modal após enviar
-        modal.classList.remove("active");
-        
-        // Limpa o formulário
-        document.getElementById('formMatricula').reset();
-    }
-});
+    });
+}
 
 // ===== MODAL MATRÍCULA =====
 const modal = document.getElementById("modalMatricula");
 const openModalBtns = document.querySelectorAll(".open-modal");
 const closeModalBtn = document.querySelector(".close-modal");
 
-openModalBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-        modal.classList.add("active");
+if (openModalBtns && openModalBtns.length > 0) {
+    openModalBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // Verifica se o botão está dentro de um pricing-card para extrair o plano
+            const pricingCard = btn.closest(".pricing-card");
+            if (pricingCard) {
+                const planoH3 = pricingCard.querySelector("h3");
+                const priceSpan = pricingCard.querySelector(".price");
+                
+                if (planoH3) {
+                    const planoNome = planoH3.textContent;
+                    const preco = priceSpan ? priceSpan.textContent.trim().split('/')[0] : "";
+                    const planoCompleto = `${planoNome} - ${preco}`;
+                    
+                    const matPlano = document.getElementById("mat-plano");
+                    if (matPlano) {
+                        matPlano.value = planoCompleto;
+                    }
+                }
+            }
+            if (modal) {
+                modal.classList.add("active");
+            }
+        });
     });
-});
+}
 
-closeModalBtn.addEventListener("click", () => {
-    modal.classList.remove("active");
-});
+if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => {
+        if (modal) {
+            modal.classList.remove("active");
+        }
+    });
+}
 
-window.addEventListener("click", (event) => {
-    if (event.target == modal) {
-        modal.classList.remove("active");
-    }
-});
+if (modal) {
+    window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+            modal.classList.remove("active");
+        }
+    });
+}
+
+// FORM MATRÍCULA - ENVIO AO WHATSAPP
+const formMatricula = document.getElementById('formMatricula');
+if (formMatricula) {
+    formMatricula.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const nome = document.getElementById('mat-nome').value;
+        const plano = document.getElementById('mat-plano').value;
+        const objetivo = document.getElementById('mat-objetivo').value;
+        
+        if (nome && plano && objetivo) {
+            const link = `https://wa.me/5535999252283?text=Olá Zampak! Meu nome é ${nome}. Gostaria de contratar o plano ${plano}. Meu objetivo é ${objetivo}.`;
+            window.open(link, '_blank');
+            
+            // Fecha o modal após enviar
+            if (modal) {
+                modal.classList.remove("active");
+            }
+            
+            // Limpa o formulário
+            formMatricula.reset();
+        } else {
+            alert('Por favor, preencha todos os campos!');
+        }
+    });
+}
