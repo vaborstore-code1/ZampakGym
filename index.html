@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zampak Gym</title>
+    
+    <meta name="theme-color" content="#050505">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <nav class="navbar" role="navigation">
+        <div class="logo-container">
+            <img src="logo.png" alt="Zampak Gym Logo" class="main-logo">
+            <div class="logo-text">ZAMPAK<span>GYM</span></div>
+        </div>
+        
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <ul class="nav-links">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#modalidades">Treinos</a></li>
+            <li><a href="#comunidade">Comunidade</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+            <li><a href="#agende sua aula">Agende sua aula</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content reveal">
+            <img src="logo.png" alt="Logo Zampak" class="hero-logo-img">
+            <h1>FORJANDO <span>ELITES</span></h1>
+            <p>Onde a força bruta encontra a sofisticação premium.</p>
+            <div class="hero-btns">
+                <a href="javascript:void(0)" class="btn-gold open-modal">MATRICULE-SE</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="modalidades" class="services">
+        <h2 class="reveal">DOMINE SUA <span>DISCIPLINA</span></h2>
+        <div class="cards-container">
+            <div class="card reveal">
+                <div class="card-icon"><i class="fas fa-weight-hanging"></i></div>
+                <h3>Bodybuilding</h3>
+                <p1>Equipamentos de elite para hipertrofia máxima.</p1>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Performance</h3>
+                <p1>Explosão muscular e condicionamento extremo.</p1>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon"><i class="fas fa-fist-raised"></i></div>
+                <h3>Fight Club</h3>
+                <p1>Artes Marciais com Mestres prontos para te ensinar.</p1>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="comunidade" class="instagram-feed reveal">
+        <h2>#ZAMPAK<span>GYM</span></h2>
+        <p class="section-subtitle">Junte-se à nossa elite no Instagram</p>
+        <div class="insta-grid">
+            <div class="insta-item"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&h=400&fit=crop" alt="Treino Zampak" loading="lazy"></div>
+            <div class="insta-item"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=400&h=400&fit=crop" alt="Treino Zampak" loading="lazy"></div>
+            <div class="insta-item"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=400&h=400&fit=crop" alt="Treino Zampak" loading="lazy"></div>
+            <div class="insta-item"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=400&h=400&fit=crop" alt="Treino Zampak" loading="lazy"></div>
+        </div>
+    </section>
+
+    <section id="planos" class="pricing">
+        <h2 class="reveal">PLANOS <span>ZAMPAK</span></h2>
+        <div class="pricing-container">
+            <div class="pricing-card reveal">
+                <h3>ANUAL</h3>
+                <div class="price">R$ 149,00<span>/mês</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Musculação Livre</li>
+                    <li><i class="fas fa-check"></i> Área de Cardio</li>
+                </ul>
+                <a href="javascript:void(0)" class="btn-outline open-modal">TREINAR</a>
+            </div>
+            <div class="pricing-card gold-card reveal">
+                <div class="badge">RECOMENDADO</div>
+                <h3>MENSAL</h3>
+                <div class="price">R$ 119,00<span>/mês</span></div>
+                <ul>
+                    <li><i class="fas fa-check"></i> Musculação Livre</li>
+                    <li><i class="fas fa-check"></i> Área de Cardio</li>
+                </ul>
+                <a href="javascript:void(0)" class="btn-gold open-modal">TREINAR</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="agende sua aula" class="free-pass reveal">
+        <div class="lead-container">
+            <div class="lead-text">
+                <h2>AGENDE <span>SUA AULA</span></h2>
+                <h1>Marque sua aula experimental agora mesmo!.</h1  >
+            </div>
+            <form class="lead-form" id="leadForm">
+                <input type="text" id="name" placeholder="Nome Completo" required>
+                <input type="tel" id="phone" placeholder="WhatsApp" required>
+                <button type="submit" class="btn-gold shadow-gold">MARCAR AGORA</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section reveal">
+        <h2>DÚVIDAS <span>FREQUENTES</span></h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">Qual o horário de funcionamento? <i class="fas fa-plus"></i></button>
+                <div class="accordion-body"><p>06:00 às 21:00 seg à sex / Sáb: 08:00 às 13:00.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Quais Artes Marciais são oferecidas? <i class="fas fa-plus"></i></button>
+                <div class="accordion-body"><p>Oferecemos o melhor do Boxe para todos os nossos alunos.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-col">
+                <img src="logo.png" alt="Zampak Logo" class="footer-logo">
+                <p>Você em constante evolução!</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/zampakgymcidadejardim/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5535999252283" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Zampak Gym. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5535999252283" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div id="modalMatricula" class="modal">
+        <div class="modal-content reveal">
+            <span class="close-modal">&times;</span>
+            <img src="logo.png" alt="Logo Zampak" class="modal-logo">
+            <h3>INICIE SUA <span>JORNADA</span></h3>
+            <p>Nos diga seu nome e objetivo para nossa equipe entrar em contato.</p>
+            
+            <form id="formMatricula" class="lead-form">
+                <input type="text" id="mat-nome" placeholder="Nome Completo" required>
+                <select id="mat-objetivo" required>
+                    <option value="" disabled selected>Qual seu objetivo?</option>
+                    <option value="Emagrecimento">Emagrecimento</option>
+                    <option value="Hipertrofia">Ganho de Massa (Hipertrofia)</option>
+                    <option value="Condicionamento">Condicionamento Físico</option>
+                    <option value="Lutas">Artes Marciais</option>
+                </select>
+                <button type="submit" class="btn-gold shadow-gold" style="width: 100%; margin-top: 10px;">ENVIAR MATRÍCULA</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log("Zampak Gym PWA: Ativo"))
+            .catch(err => console.log("Erro PWA:", err));
+        }
+    </script>
+</body>
+</html>
