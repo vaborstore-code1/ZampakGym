@@ -127,7 +127,7 @@ if (modal) {
     });
 }
 
-// FORM MATRÍCULA - ENVIO AO WHATSAPP
+// FORM MATRICULA
 const formMatricula = document.getElementById('formMatricula');
 if (formMatricula) {
     formMatricula.addEventListener('submit', function(e) {
@@ -137,19 +137,12 @@ if (formMatricula) {
         const objetivo = document.getElementById('mat-objetivo').value;
         
         if (nome.trim() && plano && objetivo) {
-            const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de contratar o plano ${plano}. Meu objetivo é ${objetivo}.`;
+            const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
             const url = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
-            
-            // Fecha o modal após enviar
-            if (modal) {
-                modal.classList.remove("active");
-            }
-            
-            // Limpa o formulário
             formMatricula.reset();
         } else {
-            alert('Por favor, preencha todos os campos!');
+            alert('Por favor, preencha seu nome!');
         }
     });
 }
