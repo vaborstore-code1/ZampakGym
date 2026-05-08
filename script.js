@@ -69,7 +69,7 @@ if (leadForm) {
         const nome = document.getElementById('name').value;
         
         if (nome.trim()) {
-            const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
+            const mensagem = `*NOVO LEAD - AULA EXPERIMENTAL*\n\n📋 *Nome:* ${nome}\n\nOlá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
             const url = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
             leadForm.reset();
@@ -137,12 +137,13 @@ if (formMatricula) {
         const objetivo = document.getElementById('mat-objetivo').value;
         
         if (nome.trim() && plano && objetivo) {
-            const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
+            const mensagem = `*NOVO LEAD - MATRÍCULA ZAMPAK*\n\n📋 *Nome:* ${nome}\n💪 *Plano:* ${plano}\n🎯 *Objetivo:* ${objetivo}\n\nOlá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental!`;
             const url = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');
             formMatricula.reset();
+            modal.classList.remove("active");
         } else {
-            alert('Por favor, preencha seu nome!');
+            alert('Por favor, preencha todos os campos!');
         }
     });
 }
