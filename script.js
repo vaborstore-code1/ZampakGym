@@ -70,8 +70,8 @@ if (leadForm) {
         
         if (nome.trim()) {
             const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de marcar uma aula experimental.`;
-            const link = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
-            window.open(link, '_blank');
+            const url = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
             leadForm.reset();
         } else {
             alert('Por favor, preencha seu nome!');
@@ -138,8 +138,8 @@ if (formMatricula) {
         
         if (nome.trim() && plano && objetivo) {
             const mensagem = `Olá Zampak! Meu nome é ${nome}. Gostaria de contratar o plano ${plano}. Meu objetivo é ${objetivo}.`;
-            const link = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
-            window.open(link, '_blank');
+            const url = `https://wa.me/5535999252283?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
             
             // Fecha o modal após enviar
             if (modal) {
